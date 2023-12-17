@@ -30,6 +30,12 @@ dependencies {
 
 	// lombok
 	compileOnly 'org.projectlombok:lombok'
+
+	//JPA
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// Mysql
+	runtimeOnly 'mysql:mysql-connector-java:8.0.25'
 }
 
 tasks.named('test') {
