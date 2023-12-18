@@ -16,4 +16,4 @@
 2023.12.19
 > Insert 추가
 
-> RegDate, LastModifyDate는 *String* 타입으로 받고, Insert 될 때 _TotalPoliciesServiceImpl_에서 적용해줌.
+> RegDate, LastModifyDate는 *String* 타입으로 받고, Insert 될 때 _TotalPoliciesServiceImpl_ 에서 적용해줌.
