@@ -1,6 +1,9 @@
 package com.example.demo2.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +24,15 @@ public class TotalPoliciesServiceImpl implements TotalPoliciesService {
 
     @Override
     public void insertTotalPolicies(TotalPolicies totalPolicies) {
+        Date today = new Date();
+        Locale currentLocale = new Locale("KOREAN", "KOREA");
+        String pattern = "yyyyMMddHHmmss";
+        SimpleDateFormat formatter = new SimpleDateFormat(pattern, currentLocale);
+        String now = formatter.format(today);
 
+        totalPolicies.setRegDate(now);
+        totalPolicies.setLastModifyDate(now);
+        totalPoliciesRepository.save(totalPolicies);
     }
 
     @Override
@@ -31,7 +42,13 @@ public class TotalPoliciesServiceImpl implements TotalPoliciesService {
 
     @Override
     public void updateTotalPolicies(TotalPolicies totalPolicies) {
+        Date today = new Date();
+        Locale currentLocale = new Locale("KOREAN", "KOREA");
+        String pattern = "yyyyMMddHHmmss";
+        SimpleDateFormat formatter = new SimpleDateFormat(pattern, currentLocale);
+        String now = formatter.format(today);
 
+        totalPolicies.setLastModifyDate(now);
     }
 
     @Override

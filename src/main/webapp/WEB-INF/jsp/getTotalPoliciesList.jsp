@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,12 +9,30 @@
                 border : 1px solid black;
                 border-collapse: collapse;
             }
-            th, td {
+            .td_border {
                 border: 1px solid black;
             }
         </style>
     </head>
     <body>
+        <a href="/">Home</a>
+        <br>
+        <br>
+        <h3>추가</h3>
+        <form action="insertTotalPolicies" mothod="post">
+            <input type="hidden" name="DomainID" value="1000000000000"/>
+            <table style="float:left; border:none; width:50%;">
+                <tr>
+                    <td>PolicyID :  <input type="text" name="PolicyID"/></td>
+                    <td>PolicyName : <input type="text" name="PolicyName"/></td>
+                    <td>Memo : <input type="text" name="Memo"/></td>
+                    <td><input type="submit" value="submit"/></td>
+                </tr>
+            </table>
+        </form>
+        <br>
+        <hr>
+        <br>
         <div style="text-align: center;">
             <table style="margin:auto;">
                 <tr>
@@ -28,12 +45,12 @@
                 </tr>
                 <c:forEach var="totalPolicies" items="${totalPoliciesList}">
                     <tr>
-                        <td>${totalPolicies.domainID}</td>
-                        <td>${totalPolicies.policyID}</td>
-                        <td>${totalPolicies.policyName}</td>
-                        <td>${totalPolicies.regDate}</td>
-                        <td>${totalPolicies.lastModifyDate}</td>
-                        <td>${totalPolicies.memo}</td>
+                        <td class="td_border">${totalPolicies.domainID}</td>
+                        <td class="td_border">${totalPolicies.policyID}</td>
+                        <td class="td_border">${totalPolicies.policyName}</td>
+                        <td class="td_border">${totalPolicies.regDate}</td>
+                        <td class="td_border">${totalPolicies.lastModifyDate}</td>
+                        <td class="td_border">${totalPolicies.memo}</td>
                     </tr>
                 </c:forEach>
             </table>

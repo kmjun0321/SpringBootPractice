@@ -43,4 +43,10 @@ public class TotalPoliciesController {
         model.addAttribute("totalPoliciesList", totalPoliciesList);
         return "getTotalPoliciesList";
     }
+
+    @RequestMapping("/insertTotalPolicies")
+    public String insertTotalPolicies(TotalPolicies totalPolicies) {
+        totalPoliciesService.insertTotalPolicies(totalPolicies);
+        return "redirect:getTotalPoliciesList";
+    }
 }

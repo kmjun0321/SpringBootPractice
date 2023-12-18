@@ -1,5 +1,10 @@
 package com.example.demo2.domain;
 
+import java.util.Date;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,11 +16,14 @@ import lombok.Data;
 @Entity
 @Table(name = "TotalPolicies")
 public class TotalPolicies {
-    @Column(name = "DomainID")
-    private Long domainID;
 
     @Id
     @GeneratedValue
+    private Long seq;
+
+    @Column(name = "DomainID")
+    private Long domainID;
+
     @Column(name = "PolicyID")
     private String policyID;
 
