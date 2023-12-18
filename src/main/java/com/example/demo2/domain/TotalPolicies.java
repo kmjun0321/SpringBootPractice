@@ -1,10 +1,5 @@
 package com.example.demo2.domain;
 
-import java.util.Date;
-
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -39,6 +34,10 @@ public class TotalPolicies {
     @Column(name = "Memo")
     private String memo;
 
+    public void setSeq(Long seq) {
+        this.seq = seq;
+    }
+
     public void setDomainID(Long domainID) {
         this.domainID = domainID;
     }
@@ -61,6 +60,10 @@ public class TotalPolicies {
 
     public void setMemo(String memo) {
         this.memo = memo;
+    }
+
+    public Long getSeq() {
+        return seq;
     }
 
     public Long getDomainID() {

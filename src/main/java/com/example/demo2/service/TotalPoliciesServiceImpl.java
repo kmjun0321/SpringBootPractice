@@ -53,6 +53,6 @@ public class TotalPoliciesServiceImpl implements TotalPoliciesService {
 
     @Override
     public void deleteTotalPolicies(TotalPolicies totalPolicies) {
-
+        totalPoliciesRepository.delete(totalPolicies);
     }
 }

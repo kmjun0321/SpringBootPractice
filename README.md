@@ -17,3 +17,5 @@
 > Insert 추가
 >
 > RegDate, LastModifyDate는 *String* 타입으로 받고, Insert 될 때 _TotalPoliciesServiceImpl_ 에서 적용해줌.
+>
+> Delete 기능 추가

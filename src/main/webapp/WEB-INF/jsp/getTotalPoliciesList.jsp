@@ -42,6 +42,7 @@
                     <th>RegDate</th>
                     <th>LastModifyDate</th>
                     <th>Memo</th>
+                    <th></th>
                 </tr>
                 <c:forEach var="totalPolicies" items="${totalPoliciesList}">
                     <tr>
@@ -51,6 +52,7 @@
                         <td class="td_border">${totalPolicies.regDate}</td>
                         <td class="td_border">${totalPolicies.lastModifyDate}</td>
                         <td class="td_border">${totalPolicies.memo}</td>
+                        <td class="td_border"><a href="deleteTotalPolicies?seq=${totalPolicies.seq}&policyID=${totalPolicies.policyID}">삭제</a></td>
                     </tr>
                 </c:forEach>
             </table>

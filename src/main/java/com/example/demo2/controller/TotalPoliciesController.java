@@ -23,6 +23,7 @@ public class TotalPoliciesController {
 
         for (int i = 0; i < 9; i++) {
             TotalPolicies tp = new TotalPolicies();
+            tp.setSeq(Long.valueOf(i));
             tp.setDomainID(Long.valueOf(i));
             tp.setPolicyID("PolicyID - " + i);
             tp.setPolicyName("PolicyName - " + i);
@@ -47,6 +48,12 @@ public class TotalPoliciesController {
     @RequestMapping("/insertTotalPolicies")
     public String insertTotalPolicies(TotalPolicies totalPolicies) {
         totalPoliciesService.insertTotalPolicies(totalPolicies);
+        return "redirect:getTotalPoliciesList";
+    }
+
+    @RequestMapping("/deleteTotalPolicies")
+    public String deleteTotalPolicies(TotalPolicies totalPolicies) {
+        totalPoliciesService.deleteTotalPolicies(totalPolicies);
         return "redirect:getTotalPoliciesList";
     }
 }
